@@ -2,13 +2,21 @@ sudo: false
 language: node_js
 cache:
   directories:
-    - node_modules
+  - node_modules
 notifications:
   email: false
 node_js:
-  - '8'
+- '8'
 script: npm run validate
 after_success: node src travis-after-success
 branches:
   only:
-    - master
+  - master
+deploy:
+  provider: npm
+  email: brandon@uptrend.tech
+  api_key:
+    secure: VvPVQszKLQQIy/bjZuGAvfuWPqYE/go05JHjTdHM8tog4EijvkKXr0yxC4wPB60Yu0Dob3fglW9BXfliI2qOnOBT259oS0QSI6JvXhnNA2/NtM/GbbPQuhSv9meTMEO5k1MHd2RcOTzi6+LgWd42MyuTrGZAN0a6pcoFXCLqeKWDTZgYODX0PkuMr3jSHuBSONOh8+G2z8Ew+iuyvGx4HPHT5eeg66eU0f7+uSCAV1ANOM/Z50+0LEhQXsSJVeR2MUS2HsrOGIrnNP3TBn0cYI28x26/CaarcFCOF8UB7G7+NBSI4mL48KlGATCQGEW8x7pI9T18syx7Yt34RjWDaN+R83nZri3PzmLd3tpffKgLXnMJF9tZ2/QHv8FqCR4ITlNta1EDmAmRRGguSa0jfczUzHqoEpLYJQkNw5ki/CatA6a0ANbocBokxXpbPDeiltO+djjTWqBMpU1XFm6QM4i9iekG34sF8mWrsHxHLjRagt3Pw0HhnS6YOlmVz4O7kG1347Az2qmq9D2ODShuU9EXDajqqK0sTIwQ59DvpMA/gucpF2LO8K76DDXVhnXmL9uq1YOVI8YaUrmt2Iq2FerCgVm+pY/8JfJSerRtzj/lUbw//STI1nLFMbdhngWjvVUcNa6xE+wdvAE8dZxIbUEZTtHkPCzTub1V3QI7luM=
+  on:
+    tags: true
+    repo: orther/orther-scripts
