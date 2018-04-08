@@ -23,17 +23,17 @@ test('appDirectory is the dirname to the package.json', () => {
   expect(require('../utils').appDirectory).toBe(pkgPath)
 })
 
-test('resolveKcdScripts resolves to src/index.js when in the kcd-scripts package', () => {
-  mockPkg({pkg: {name: 'kcd-scripts'}})
+test('resolveKcdScripts resolves to src/index.js when in the orther-scripts package', () => {
+  mockPkg({pkg: {name: 'orther-scripts'}})
   expect(require('../utils').resolveKcdScripts()).toBe(
     require.resolve('../').replace(process.cwd(), '.'),
   )
 })
 
-test('resolveKcdScripts resolves to kcd-scripts if not in the kcd-scripts package', () => {
-  mockPkg({pkg: {name: 'not-kcd-scripts'}})
+test('resolveKcdScripts resolves to orther-scripts if not in the orther-scripts package', () => {
+  mockPkg({pkg: {name: 'not-orther-scripts'}})
   whichSyncMock.mockImplementationOnce(() => require.resolve('../'))
-  expect(require('../utils').resolveKcdScripts()).toBe('kcd-scripts')
+  expect(require('../utils').resolveKcdScripts()).toBe('orther-scripts')
 })
 
 test(`resolveBin resolves to the full path when it's not in $PATH`, () => {

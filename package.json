@@ -1,5 +1,5 @@
 {
-  "name": "kcd-scripts",
+  "name": "orther-scripts",
   "version": "0.0.0-semantically-released",
   "description": "CLI for common scripts for my projects",
   "engines": {
@@ -7,7 +7,7 @@
     "npm": ">= 5"
   },
   "bin": {
-    "kcd-scripts": "dist/index.js"
+    "orther-scripts": "dist/index.js"
   },
   "scripts": {
     "add-contributor": "node src contributors add",
@@ -91,12 +91,12 @@
   "eslintIgnore": ["node_modules", "coverage", "dist"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kentcdodds/kcd-scripts.git"
+    "url": "https://github.com/orther/orther-scripts.git"
   },
   "bugs": {
-    "url": "https://github.com/kentcdodds/kcd-scripts/issues"
+    "url": "https://github.com/orther/orther-scripts/issues"
   },
-  "homepage": "https://github.com/kentcdodds/kcd-scripts#readme",
+  "homepage": "https://github.com/orther/orther-scripts#readme",
   "devDependencies": {
     "jest-in-case": "^1.0.2",
     "slash": "^1.0.0"
